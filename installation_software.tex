@@ -31,14 +31,14 @@ To download the ESP-IDF, run the following command in a terminal:
 mkdir -p ~/esp
 cd ~/esp
 git clone --recursive https://github.com/espressif/esp-idf.git
-\end{lstlisting}
+\end{lstlisting}\cite{EspressifGetStartedGetESPIDF}
 
 \subsubsection{Install the ESP-IDF tools}
 Now you can run the following command in a terminal to install the tools of ESP:
 \begin{lstlisting}[language=bash]
 cd ~/esp/esp-idf
 ./install.sh esp32
-\end{lstlisting}
+\end{lstlisting}\cite{EspressifGetStartedsetUpTheTools}
 
 \subsection{Set up of the environment variables}
 The setup does not automatically set up the PATH environment variable. This section describes
@@ -48,9 +48,9 @@ how to set the environment variables temporary or as an alias.
 Below you can enter in a terminal the following line to setup the environment variables of the esp idf temporary:
 \begin{lstlisting}[language=bash]
 . $HOME/esp/esp-idf/export.sh
-\end{lstlisting}
+\end{lstlisting} 
 
-\fcolorbox{red}{pink}{{\fontencoding{U}\fontfamily{futs}\selectfont\char 66\relax} Don't forget the space between the leading dot and the path!}
+\fcolorbox{red}{pink}{{\fontencoding{U}\fontfamily{futs}\selectfont\char 66\relax} Don't forget the space between the leading dot and the path!}\cite{EspressifGetStartedsetUpTheEnvironmentVariables}
 
 \subsubsection{Set up environment variables as an alias}
 If you want to create an alias for your shell profile (\texttt{.profile}, \texttt{.bashrc}, \texttt{.zprofile}, etc), you can add the following line:
@@ -58,5 +58,5 @@ If you want to create an alias for your shell profile (\texttt{.profile}, \textt
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
 \end{lstlisting}
 
-Now you have to restart the terminal session or you can execute \texttt{source  [path to profile]} to refresh the configuration. 
+Now you have to restart the terminal session or you can execute \texttt{source  [path to profile]} to refresh the configuration.\cite{EspressifGetStartedsetUpTheEnvironmentVariables}
 
