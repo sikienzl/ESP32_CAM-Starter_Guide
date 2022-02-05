@@ -1,0 +1,43 @@
+\documentclass[12pt]{article}
+
+\usepackage[nottoc]{tocbibind}
+\usepackage[english]{babel}
+\usepackage{biblatex}
+\usepackage{lmodern}  % for bold teletype font
+\usepackage{amsmath}  % for \hookrightarrow
+\usepackage{xcolor}   % for \textcolor
+\usepackage{listings}
+
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  frame=single,
+  breaklines=true,
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+}
+
+\usepackage{fourier}
+
+
+\begin{document}
+
+
+
+
+\pagenumbering{gobble}
+\include{titlepage}
+\cleardoublepage
+\pagenumbering{arabic}
+
+\include{installation_software}
+
+\tableofcontents\newpage
+\listoffigures\newpage
+\listoftables\newpage
+
+\setlength{\parskip}{0.75em}
+
+
+\printbibliography
+
+\end{document}
