@@ -1,0 +1,55 @@
+\graphicspath{ {./hardware/pictures/} }
+\section{Hardware Overview}
+This section describes which kind of hardware is required and should give an overview about
+the used boards. 
+
+\subsection{ESP32-CAM Board}
+The ESP32-S-CAM board has different pins and connectors. Additional you will find
+a connector panel for the cam, a micro-sd-card-slot, two LED's, a reset button and a connector for an external antenna (this can be not used, because there is a resistance which uses the onboard pcb antenna \cite{YoutubeESP32CamAntenna}).
+The table \ref{tab:board-specifications} show you the board specifications.
+
+\begin{table}[H]
+\begin{tabular}{lll}
+CPU:                     &                                       &                                                    \\ \hline
+\multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{Processor:}       & \multicolumn{1}{l|}{Xtensa 32-bit LX6 \cite{ESP32Net}}             \\ \cline{2-3} 
+\multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{Cores:}           & \multicolumn{1}{l|}{2}                             \\ \cline{2-3} 
+\multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{Clock frequency:} & \multicolumn{1}{l|}{240 MHz \cite{ESP32Net}}                       \\ \cline{2-3} 
+\multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{Performance:}     & \multicolumn{1}{l|}{600 DMIPS \cite{ESP32Net}}                     \\ \cline{2-3} 
+Memory:                  &                                       &                                                    \\ \hline
+\multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{ROM:}             & \multicolumn{1}{l|}{448 KiB \cite{ESP32Net}}                       \\ \cline{2-3} 
+\multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{SRAM:}            & \multicolumn{1}{l|}{520 KiB \cite{ESP32Net}}                       \\ \cline{2-3} 
+\multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{PSRAM:}           & \multicolumn{1}{l|}{4 MiB \cite{ESP32Net}}                         \\ \cline{2-3} 
+Wireless Connectivity:   &                                       &                                                    \\ \hline
+\multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{Wi-Fi:}           & \multicolumn{1}{l|}{802.11 b/g/n \cite{ESP32Net}}                  \\ \cline{2-3} 
+\multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{Bluetooth:}       & \multicolumn{1}{l|}{v4.2 BR/EDR and BLE Standards \cite{ESP32Net}} \\ \cline{2-3} 
+Wi-Fi Security:          & \multicolumn{1}{l|}{}                 & \multicolumn{1}{l|}{WPA/WPA2/WPA2-Enterprise/WPS \cite{LoborisEUESP32CAM}}  \\ \hline
+UART Baudrate (default): & \multicolumn{1}{l|}{}                 & \multicolumn{1}{l|}{115200 bps \cite{LoborisEUESP32CAM}}                    \\ \hline
+\end{tabular}
+\caption{\label{tab:board-specifications}Board specifications}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth]{esp32-s_overview}
+\caption[ESP32-S-CAM]{ESP32-S CAM \\ Source: own picture}
+\label{ESP32-S-CAM-overview}
+\end{figure}
+
+As shown in figure \ref{ESP32-CAM-pinout}, you see the different pinouts of the ESP32-CAM board.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{ESP32-CAM-pinout-mischianti}
+\caption[ESP32 CAMERA PINOUT]{ESP32 CAMERA PINOUT \\ Source: \url{https://www.mischianti.org/wp-content/uploads/2020/09/ESP32-CAM-pinout-mischianti.jpg}\\ from Renzo Mischianti \\ License: \url{https://creativecommons.org/licenses/by-nc-nd/4.0/}}
+\label{ESP32-CAM-pinout}
+\end{figure}
+
+\subsubsection{ESP32-CAM MB Programmer Board}
+The ESP32-CAM MB Programmer is an optional board. It is a nice to have and with this board it is also possible (as the name already says) to program the ESP32-CAM. In this documentation it will not described how you can programm your ES32-CAM board with the MB programmer board, because i haven't tried it. Additionally the documentations what i have found, uploads source-code with the Arduino IDE, which i am not using here.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{ESP32-CAM-MB-programmer}
+\caption[ESP32-S-CAM]{ESP32-S CAM MB Programmer Board \\ Source: own picture}
+\label{ESP32-S-CAM-overview}
+\end{figure}

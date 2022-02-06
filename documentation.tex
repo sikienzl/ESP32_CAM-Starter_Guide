@@ -2,8 +2,12 @@
 
 \usepackage[nottoc]{tocbibind}
 \usepackage[english]{babel}
+\bibliographystyle{apalike}
+\usepackage{graphicx}
 \usepackage{biblatex}
 \addbibresource{bibliothek.bib}
+\usepackage{url}
+\usepackage[colorlinks]{hyperref}
 \usepackage{lmodern}  % for bold teletype font
 \usepackage{amsmath}  % for \hookrightarrow
 \usepackage{xcolor}   % for \textcolor
@@ -18,6 +22,7 @@
 }
 
 \usepackage{fourier}
+\usepackage{float}
 
 
 \begin{document}
@@ -30,11 +35,16 @@
 \cleardoublepage
 \pagenumbering{arabic}
 
-\include{installation_software}
-
 \tableofcontents\newpage
 \listoffigures\newpage
 \listoftables\newpage
+
+\include{hardware/hardware}
+
+\include{installation_software}
+
+
+
 
 \setlength{\parskip}{0.75em}
 
