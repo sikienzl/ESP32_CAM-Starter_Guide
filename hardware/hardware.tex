@@ -1,5 +1,5 @@
 \graphicspath{ {./hardware/pictures/} }
-\section{Hardware Overview}
+\section{Hardware}
 This section describes which kind of hardware is required and should give an overview about
 the used boards. 
 
@@ -31,7 +31,7 @@ UART Baudrate (default): & \multicolumn{1}{l|}{}                 & \multicolumn{
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.75\textwidth]{esp32-s_overview}
-\caption[ESP32-S-CAM]{ESP32-S CAM \\ Source: own picture}
+\caption[ESP32-S-CAM Overview]{ESP32-S CAM \\ Source: own picture}
 \label{ESP32-S-CAM-overview}
 \end{figure}
 
@@ -40,19 +40,32 @@ As shown in figure \ref{ESP32-CAM-pinout}, you see the different pinouts of the 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{ESP32-CAM-pinout-mischianti}
-\caption[ESP32 CAMERA PINOUT]{ESP32 CAMERA PINOUT \\ Source: \url{https://www.mischianti.org/wp-content/uploads/2020/09/ESP32-CAM-pinout-mischianti.jpg}\\ from Renzo Mischianti \\ License: \url{https://creativecommons.org/licenses/by-nc-nd/4.0/}}
+\caption[ESP32 CAMERA PINOUT Overview]{ESP32 CAMERA PINOUT \\ Source: \url{https://www.mischianti.org/wp-content/uploads/2020/09/ESP32-CAM-pinout-mischianti.jpg}\\ from Renzo Mischianti \\ License: \url{https://creativecommons.org/licenses/by-nc-nd/4.0/}}
 \label{ESP32-CAM-pinout}
 \end{figure}
 
-\subsubsection{ESP32-CAM MB Programmer Board}
+\subsection{ESP32-CAM MB Programmer Board}
 The ESP32-CAM MB Programmer is an optional board. It is a nice to have and with this board it is also possible (as the name already says) to program the ESP32-CAM. In this documentation it will not described how you can programm your ES32-CAM board with the MB programmer board. Additionally the most documentations describes how to upload source-code with the Arduino IDE, which will also not shown in this documentation.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.4\textwidth]{ESP32-CAM-MB-programmer}
-\caption[ESP32-S-CAM]{ESP32-S CAM MB Programmer Board \\ Source: own picture}
+\caption[ESP32-S CAM MB Programmer Board]{ESP32-S CAM MB Programmer Board \\ Source: own picture}
 \label{ESP32-S-CAM-overview}
 \end{figure}
 
 This board will be used later as power-supply for the ESP32-CAM board.
+
+\subsection{USB to TTL Serial Adapter}
+The USB to TTL serial adapter will be used for programming the ESP32-CAM Board.
+It is important that it supports 5V, because the ESP32-CAM board needs 5 V input voltage.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{usb-ttl_serial}
+\caption[USB to TTL Serial modul]{USB to TTL Serial modul \\ Source: own picture}
+\label{USB-to-TTL-Serial}
+\end{figure}
+
+In the picture \ref{USB-to-TTL-Serial} you see a USB to TTL Serial modul that has a Jumper, where you can select the voltage (3 or 5 v). Please put it on the correct slot, that on VCC are 5 V output voltage. 
 
