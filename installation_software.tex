@@ -3,24 +3,37 @@ This section describes the required steps, how the ESP-IDF can be installed unde
 
 
 \subsection{Prerequisites}
+\subsubsection{User needs to be added into dialout or uucp group}
+The user that works later with the ESP32S-CAM board should communicate over USB with it. For this it is required that the user get read and write access to the serial port. On some Linux distributions, the group is named \texttt{dialout}, on some other linux distributions, it is \texttt{uucp}. 
+\begin{itemize}
+\item Ubuntu, Debian, CentOS 7 \& 8:
+\begin{lstlisting}[language=bash]
+$ sudo usermod -a -G dialout $USER
+\end{lstlisting}
+\item Arch:
+\begin{lstlisting}[language=bash]
+$ sudo usermod -a -G uucp $USER
+\end{lstlisting}
+\end{itemize} \cite{EspressifEstablishSerialConnectionWithESP32}
 
+\subsubsection{Install of required libraries}
 First of all you have to install the required dependencies on your linux distribution.
 
 \begin{itemize}
 
 \item Ubuntu and Debian:
 \begin{lstlisting}[language=bash]
-sudo apt-get install git wget flex bison gperf python3 python3-pip python3-setuptools cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0
+$ sudo apt-get install git wget flex bison gperf python3 python3-pip python3-setuptools cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0
 \end{lstlisting}
 
 \item CentOS 7 \& 8:
 \begin{lstlisting}[language=bash]
-sudo yum -y update && sudo yum install git wget flex bison gperf python3 python3-pip python3-setuptools cmake ninja-build ccache dfu-util libusbx
+$ sudo yum -y update && sudo yum install git wget flex bison gperf python3 python3-pip python3-setuptools cmake ninja-build ccache dfu-util libusbx
 \end{lstlisting}
 
 \item Arch:
 \begin{lstlisting}[language=bash]
-sudo pacman -S --needed gcc git make flex bison gperf python-pip cmake ninja ccache dfu-util libusb
+$ sudo pacman -S --needed gcc git make flex bison gperf python-pip cmake ninja ccache dfu-util libusb
 \end{lstlisting}
 
 \end{itemize}
@@ -28,16 +41,16 @@ sudo pacman -S --needed gcc git make flex bison gperf python-pip cmake ninja cca
 \subsection{Get ESP-IDF}
 To download the ESP-IDF, run the following command in a terminal:
 \begin{lstlisting}[language=bash]
-mkdir -p ~/esp
-cd ~/esp
-git clone --recursive https://github.com/espressif/esp-idf.git
+$ mkdir -p ~/esp
+$ cd ~/esp
+$ git clone --recursive https://github.com/espressif/esp-idf.git
 \end{lstlisting}\cite{EspressifGetStartedGetESPIDF}
 
 \subsubsection{Install the ESP-IDF tools}
 Now you can run the following command in a terminal to install the tools of ESP:
 \begin{lstlisting}[language=bash]
-cd ~/esp/esp-idf
-./install.sh esp32
+$ cd ~/esp/esp-idf
+$ ./install.sh esp32
 \end{lstlisting}\cite{EspressifGetStartedsetUpTheTools}
 
 \subsection{Set up of the environment variables}
@@ -47,12 +60,12 @@ how to set the environment variables temporary or as an alias.
 \subsubsection{Set up environment variables temporary}
 Below you can enter in a terminal the following line to setup the environment variables of the esp idf temporary:
 \begin{lstlisting}[language=bash]
-. $HOME/esp/esp-idf/export.sh
+$ . $HOME/esp/esp-idf/export.sh
 \end{lstlisting} 
 
 \fcolorbox{red}{pink}{{\fontencoding{U}\fontfamily{futs}\selectfont\char 66\relax} Don't forget the space between the leading dot and the path!}\cite{EspressifGetStartedsetUpTheEnvironmentVariables}
 
-\subsubsection{Set up environment variables as an alias}
+\subsubsection{Set up environment variables as an alias}\label{environment_variable}
 If you want to create an alias for your shell profile (\texttt{.profile}, \texttt{.bashrc}, \texttt{.zprofile}, etc), you can add the following line:
 \begin{lstlisting}[language=bash]
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
